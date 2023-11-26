@@ -1,3 +1,5 @@
+
+
 from pathlib import Path
 from dotenv import load_dotenv
 import os
@@ -21,7 +23,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #External Packages
-    'rest_framework'
+    'rest_framework',
+    'mptt',
+    #Internal Apps
+    "drfecommerce.product",
+
 ]
 
 MIDDLEWARE = [
