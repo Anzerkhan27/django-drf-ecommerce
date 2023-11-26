@@ -1,3 +1,5 @@
+
+
 from pathlib import Path
 from dotenv import load_dotenv
 import os
@@ -21,7 +23,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #External Packages
-    'rest_framework'
+    'rest_framework',
+    'mptt',
+    #Internal Apps
+    "drfecommerce.product",
+
 ]
 
 MIDDLEWARE = [
@@ -58,7 +64,12 @@ WSGI_APPLICATION = 'drfecommerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 # Password validation
@@ -102,4 +113,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+MPTT_DEFAULT_LEVEL_INDICATOR = '_'
 REST_FRAMEWORK = {}
